@@ -5,7 +5,7 @@ using namespace std;
 
 
 bool canCut(int w, int h, int n, int currN) {
-	if (currN >= n) { return true; }
+	if (currN >= n) return true;
 	else if (w % 2 == 0) {
 		return canCut(w / 2, h, n, currN * 2);
 	} else if (h % 2 == 0) {
