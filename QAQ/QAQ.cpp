@@ -1,3 +1,5 @@
+// https://codeforces.com/contest/894/problem/A
+
 #include <iostream>
 #include <cstring>
 
