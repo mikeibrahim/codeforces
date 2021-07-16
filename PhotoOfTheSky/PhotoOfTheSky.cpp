@@ -68,9 +68,9 @@ int main() {
 		else if (coordinates[i].second > maxY) maxY = coordinates[i].second;
 	}
 
-	int x = maxX - minX;
-	int y = maxY - minY;
-	int area = x * y;
+	long long x = maxX - minX;
+	long long y = maxY - minY;
+	long long area = x * y;
 
 	cout << area << '\n'; 
 }
