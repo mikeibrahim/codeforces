@@ -38,37 +38,37 @@
 using namespace std;
 
 // find total for specific name
-int findTotal(vector<pair<pair<string, int>, int> > names, string name) {
-	int total = 0;
-	for (int i = 0; i < names.size(); i++) {
-		if (names[i].first.first == name) total += names[i].first.second;
-	}
-	return total;
-}
+// int findTotal(vector<pair<pair<string, int>, int> > rounds, string name) {
+// 	int total = 0;
+// 	for (int i = 0; i < rounds.size(); i++) {
+// 		if (rounds[i].first.first == name) total += rounds[i].first.second;
+// 	}
+// 	return total;
+// }
 
 int main() {
 	int n;
 	cin >> n;
 
-	// make the totals be in each round
-	vector<pair<pair<string, int>, int> > names;
-	for (int i = 0; i < n; i++) {
-		string name;
-		int score;
-		cin >> name >> score;
-		names.push_back(make_pair(make_pair(name, score), 0));
-		names[i] = make_pair(make_pair(name, score), findTotal(names, name));
-	}
+	// // make the totals be in each round
+	// vector<pair<pair<string, int>, int> > rounds;
+	// for (int i = 0; i < n; i++) {
+	// 	string name;
+	// 	int score;
+	// 	cin >> name >> score;
+	// 	rounds.push_back(make_pair(make_pair(name, score), 0));
+	// 	rounds[i] = make_pair(make_pair(name, score), findTotal(rounds, name));
+	// }
+	
+	// // finding winner
+	// string winner = rounds[0].first.first;
+	// int max = rounds[0].second;
+	// for (int i = 0; i < n; i ++) {
+	// 	if (rounds[i].second > max) {
+	// 		winner = rounds[i].first.first;
+	// 		max = rounds[i].second;
+	// 	}
+	// }
 
-	// finding winner
-	string winner = names[0].first.first;
-	int max = names[0].second;
-	for (int i = 0; i < n; i ++) {
-		if (names[i].second > max) {
-			winner = names[i].first.first;
-			max = names[i].second;
-		}
-	}
-
-	cout << winner << '\n'; 
+	// cout << winner << '\n';
 }

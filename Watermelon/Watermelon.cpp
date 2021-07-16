@@ -1,4 +1,5 @@
-// URL
+// https://codeforces.com/problemset/problem/4/A
+// 2:54
 
 // Dependencies
 #include <algorithm>
@@ -37,7 +38,8 @@
 using namespace std;
 
 int main() {
-	int ____;
-	cin >> ____;
-	cout << ____ << '\n';
+	int x;
+	cin >> x;
+	bool b = x % 2 == 0 && x != 2;
+	cout << (b ? "YES" : "NO") << '\n'; 
 }

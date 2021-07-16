@@ -1,4 +1,5 @@
-// URL
+// https://codeforces.com/problemset/problem/50/A
+// 14:17
 
 // Dependencies
 #include <algorithm>
@@ -36,8 +37,19 @@
 
 using namespace std;
 
+int findArea(int w, int h) {
+	int numW = floor(w/2);
+	int stacked = numW * h;
+	if (w%2==1) stacked += floor(h/2);
+	return stacked;
+}
+
 int main() {
-	int ____;
-	cin >> ____;
-	cout << ____ << '\n';
+	int m, n;
+	cin >> m >> n;
+
+	int mSIde = findArea(m, n), nSide = findArea(n, m);
+	int d = max(mSIde, nSide);
+
+	cout << d << '\n';
 }

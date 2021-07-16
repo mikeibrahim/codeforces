@@ -1,4 +1,5 @@
-// URL
+// https://codeforces.com/problemset/problem/158/A
+// 14:06
 
 // Dependencies
 #include <algorithm>
@@ -37,7 +38,18 @@
 using namespace std;
 
 int main() {
-	int ____;
-	cin >> ____;
-	cout << ____ << '\n';
+	int t, k;
+	cin >> t >> k;
+	vector<int> f;
+	for (int i = 0; i < t; i++) {
+		int s;
+		cin >> s;
+		f.push_back(s);
+	}
+
+	int a = 0;
+	for (int i = 0; i < t; i++) {
+		if (f[i] >= f[k-1] && f[i] > 0) a++;
+	}
+	cout << a << '\n';
 }
