@@ -1,4 +1,4 @@
-// URL
+// https://codeforces.com/contest/1530/problem/A
 
 // Dependencies
 #include <algorithm>
@@ -37,10 +37,25 @@
 using namespace std;
 
 int main() {
-	freopen("codeforces/IO/input.txt", "r", stdin); // Input file
-	freopen("codeforces/IO/output.txt", "w", stdout); // Output file
-	int ____;
-	cin >> ____;
+	int t;
+	cin >> t;
 
-	cout << ____ << '\n';
+	for (int i = 0; i < t; i++) {
+		int num;
+		cin >> num;
+
+		vector<int> arr;
+		for (int i = 0; num > 0; i++) {
+			arr.push_back(num % 10);
+			num /= 10;
+		}
+
+		int amt = 0;
+		int max = 0;
+		for (int i = 0; i < arr.size(); i++) {
+			if (arr[i] > max) {amt = arr[i]; max = arr[i];}
+		}
+		cout << amt << '\n';
+	}
+
 }

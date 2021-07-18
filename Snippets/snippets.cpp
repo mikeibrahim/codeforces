@@ -36,9 +36,9 @@
 
 using namespace std;
 
+// Make a bunch of boiler plate functions
+
 int main() {
-	freopen("codeforces/IO/input.txt", "r", stdin); // Input file
-	freopen("codeforces/IO/output.txt", "w", stdout); // Output file
 	int ____;
 	cin >> ____;
 

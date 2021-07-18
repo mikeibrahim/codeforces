@@ -1,4 +1,4 @@
-// URL
+// https://open.kattis.com/contests/mcpc19open/problems/basketballoneonone
 
 // Dependencies
 #include <algorithm>
@@ -37,10 +37,19 @@
 using namespace std;
 
 int main() {
-	freopen("codeforces/IO/input.txt", "r", stdin); // Input file
-	freopen("codeforces/IO/output.txt", "w", stdout); // Output file
-	int ____;
-	cin >> ____;
+	string g;
+	cin >> g;
 
-	cout << ____ << '\n';
+	int as = 0, bs = 0;
+	for (int i = 0; i < g.length() - 1; i+=2) {
+		char n = g[i], s = g[i+1];
+		if (n == 'A') as += s;
+		else bs += s;
+		cout << "Checking: " << n << "\n";
+	}
+
+	cout << (as > bs ? 'A' : 'B') << '\n';
+
+
+	// BETTER SOLUTION:  cout << g[g.size()-2];
 }

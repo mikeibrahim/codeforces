@@ -1,4 +1,4 @@
-// URL
+// http://www.usaco.org/index.php?page=viewproblem2&cpid=807
 
 // Dependencies
 #include <algorithm>
@@ -37,10 +37,15 @@
 using namespace std;
 
 int main() {
-	freopen("codeforces/IO/input.txt", "r", stdin); // Input file
-	freopen("codeforces/IO/output.txt", "w", stdout); // Output file
-	int ____;
-	cin >> ____;
+	ifstream cin ("teleport.in");
+	ofstream cout ("teleport.out");
+	int a, b, x, y;
+	cin >> a >> b >> x >> y;
 
-	cout << ____ << '\n';
+	// 3 scenarios: a -> b; a -> x -> b; a -> y -> b
+	int min = abs(a - b); // "magnitude" of going start to finish; so. #1
+	min = fmin(min, abs(a - x) + abs(y - b)); // checking if so. #2 is better
+	min = fmin(min, abs(a - y) + abs(x - b)); // checking if so. #3 is better
+
+	cout << min << '\n';
 }
