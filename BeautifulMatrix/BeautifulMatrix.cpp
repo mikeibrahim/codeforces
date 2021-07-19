@@ -1,4 +1,5 @@
-// URL
+// https://codeforces.com/problemset/problem/263/A
+// 2:40
 
 // Dependencies
 #include <algorithm>
@@ -36,11 +37,24 @@
 
 using namespace std;
 
-// Make a bunch of boiler plate functions
-
 int main() {
-	int ____;
-	cin >> ____;
-
-	cout << ____ << '\n';
+	// freopen("../IO/input.txt", "r", stdin); // Input file
+	// freopen("../IO/output.txt", "w", stdout); // Output file
+	
+	// go through a 5 by 5 matrix
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			// check if the input is a 1
+			int num;
+			cin >> num;
+			if (num == 1) {
+				// see how far away the number is from the center
+				int center = 5 / 2;
+				int distance = abs(center - i) + abs(center - j);
+				// return distance, then break
+				cout << distance << endl;
+				return 0;
+			}
+		}
+	}
 }

@@ -70,14 +70,6 @@ int main() {
 			sb = b[0] - refb;
 		}
 
-		// print vectors a and b
-		// cout << "a: ";
-		// for (int i = 0; i < n; i++) cout << a[i] << " ";
-		// cout << endl;
-		// cout << "b: ";
-		// for (int i = 0; i < n; i++) cout << b[i] << " ";
-		// cout << endl;
-
 		// Minimum number of additional rounds to win
 		int m = 0;
 
@@ -96,16 +88,9 @@ int main() {
 			// Change the sum
 			int refa = (k >= n) ? 0 : a[n-k-1];
 			int refb = (k >= n) ? 0 : b[k];
-			// print refa
-			// print refb
-			// cout << refa << " " << refb << endl;
 			
 			sa = a[n-1] - refa;
 			sb = b[0] - refb;
-
-			// print sa
-			// print sb
-			// cout << "S: " << sa << " " << sb << endl;
 		}
 		cout << m << endl;
 	}
