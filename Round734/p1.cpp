@@ -1,4 +1,4 @@
-// https://codeforces.com/problemset/problem/112/A
+// https://codeforces.com/contest/1551/problem/A
 
 // Dependencies
 #include <algorithm>
@@ -26,7 +26,6 @@
 #include <set>
 #include <sstream>
 #include <stack>
-#include <string.h>
 #include <stdexcept>
 #include <streambuf>
 #include <string>
@@ -38,12 +37,20 @@
 using namespace std;
 
 int main() {
-	string s1, s2;
-	cin >> s1 >> s2;
+	// freopen("../IO/input.txt", "r", stdin); // Input file
+	// freopen("../IO/output.txt", "w", stdout); // Output file
+	int t;
+	cin >> t;
 
-	
 
-	int diff = (s1 < s2) ? -1 : 1;
+	while (t--) {
+		int n;
+		cin >> n;
+		int a = 0, b = 0;
 
-	cout << diff << '\n';
+		a = floor(n / 3.0);
+		b = ceil(n / 3.0);
+		cout << ((a + b*2 == n) ? a : b) << " " << ((a + b*2 == n) ? b : a) << endl;
+		// cout << a << " " << b << endl;
+	}
 }

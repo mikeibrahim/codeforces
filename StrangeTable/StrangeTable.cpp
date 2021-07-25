@@ -37,12 +37,21 @@
 using namespace std;
 
 int main() {
-	freopen("../IO/input.txt", "r", stdin); // Input file
-	freopen("../IO/output.txt", "w", stdout); // Output file
-	int t;
-	cin >> t;
+	// freopen("../IO/input.txt", "r", stdin); // Input file
+	// freopen("../IO/output.txt", "w", stdout); // Output file
+    int t;
+    cin >> t;
+ 
+    while (t--) {
+        long long n, m, x;
+		cin >> n >> m >> x;
 
-	while (t--) {
-		
-	}
+		long long xPos = ceil((double)x/n);
+		long long yPos = x % n;
+		if (yPos == 0) yPos = n;
+		long long xFactor = (n-1) * -1;
+		long long yFactor = m-1;
+		long long diff = ((xPos-1) * xFactor) + ((yPos-1) * yFactor);
+		cout << (x + diff) << endl;
+    }
 }
