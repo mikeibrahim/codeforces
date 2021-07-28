@@ -37,8 +37,7 @@
 using namespace std;
 
 int main() {
-	freopen("../IO/input.txt", "r", stdin); // Input file
-	freopen("../IO/output.txt", "w", stdout); // Output file
+	freopen("../IO/input.txt", "r", stdin);freopen("../IO/output.txt", "w", stdout);
 	int t;
 	cin >> t;
 

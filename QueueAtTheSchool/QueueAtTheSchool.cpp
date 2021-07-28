@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/1552/problem/A
+// https://codeforces.com/problemset/problem/266/B
 
 // Dependencies
 #include <algorithm>
@@ -39,24 +39,21 @@ using namespace std;
 int main() {
 	// freopen("../IO/input.txt", "r", stdin); // Input file
 	// freopen("../IO/output.txt", "w", stdout); // Output file
-	int t;
-	cin >> t;
+	int len, n; // Length of the queue, number of iterations
+	cin >> len >> n;
+	string str; // the queue
+	cin >> str;
 
-	while (t--) {
-		int n; // length of string
-		cin >> n;
-		string s;
-		cin >> s;
-		string scpy = s;
-		// sort string
-		sort(s.begin(), s.end());
-		// subtract strings
-		int ans = 0;
-		for (int i = 0; i < n; i++) {
-			if (s[i] != scpy[i]) {
-				ans++;
+	// Solve:
+	while (n--) {
+		for (int i = 0; i < len; i++) {
+			if (str[i] == 'B' && str[i + 1] == 'G') {
+				str[i] = 'G';
+				str[i + 1] = 'B';
+				i++;
 			}
 		}
-		cout << ans << endl;
 	}
+	cout << str << endl;
+
 }

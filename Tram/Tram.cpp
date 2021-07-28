@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/1552/problem/A
+// https://codeforces.com/problemset/problem/116/A
 
 // Dependencies
 #include <algorithm>
@@ -42,21 +42,15 @@ int main() {
 	int t;
 	cin >> t;
 
+	int curr = 0, numSeats = 0;
 	while (t--) {
-		int n; // length of string
-		cin >> n;
-		string s;
-		cin >> s;
-		string scpy = s;
-		// sort string
-		sort(s.begin(), s.end());
-		// subtract strings
-		int ans = 0;
-		for (int i = 0; i < n; i++) {
-			if (s[i] != scpy[i]) {
-				ans++;
-			}
-		}
-		cout << ans << endl;
+		int out, in;
+		cin >> out >> in;
+		// people leave the train
+		curr -= out;
+		// people arrive at the train
+		curr += in;
+		numSeats = max(numSeats, curr);
 	}
+	cout << numSeats << endl;
 }

@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/1552/problem/A
+// https://codeforces.com/problemset/problem/96/A
 
 // Dependencies
 #include <algorithm>
@@ -37,26 +37,14 @@
 using namespace std;
 
 int main() {
-	// freopen("../IO/input.txt", "r", stdin); // Input file
-	// freopen("../IO/output.txt", "w", stdout); // Output file
-	int t;
-	cin >> t;
-
-	while (t--) {
-		int n; // length of string
-		cin >> n;
-		string s;
-		cin >> s;
-		string scpy = s;
-		// sort string
-		sort(s.begin(), s.end());
-		// subtract strings
-		int ans = 0;
-		for (int i = 0; i < n; i++) {
-			if (s[i] != scpy[i]) {
-				ans++;
-			}
-		}
-		cout << ans << endl;
+	// freopen("../IO/input.txt", "r", stdin);freopen("../IO/output.txt", "w", stdout);
+	string str;
+	cin >> str;
+	int consecutive = 0, n = str.size();
+	for (int i = 1; i < n; i++) {
+		if (str[i] == str[i - 1]) consecutive++;
+		else consecutive = 0;
+		if (consecutive == 6) { cout << "YES" << endl; return 0; }
 	}
+	cout << "NO" << endl;
 }

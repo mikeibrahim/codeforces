@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/1552/problem/A
+// URL
 
 // Dependencies
 #include <algorithm>
@@ -37,26 +37,12 @@
 using namespace std;
 
 int main() {
-	// freopen("../IO/input.txt", "r", stdin); // Input file
-	// freopen("../IO/output.txt", "w", stdout); // Output file
-	int t;
-	cin >> t;
-
-	while (t--) {
-		int n; // length of string
-		cin >> n;
-		string s;
-		cin >> s;
-		string scpy = s;
-		// sort string
-		sort(s.begin(), s.end());
-		// subtract strings
-		int ans = 0;
-		for (int i = 0; i < n; i++) {
-			if (s[i] != scpy[i]) {
-				ans++;
-			}
-		}
-		cout << ans << endl;
+	freopen("../IO/input.txt", "r", stdin); // Input file
+	freopen("../IO/output.txt", "w", stdout); // Output file
+	for (int i = 1; i <= 100; i++) {
+		if (i % 3 == 0 && i % 5 == 0) cout << "FizzBuzz" << endl;
+		else if (i % 3 == 0) cout << "Fizz" << endl;
+		else if (i % 5 == 0) cout << "Buzz" << endl;
+		else cout << i << endl;
 	}
 }

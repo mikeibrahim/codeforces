@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/1552/problem/A
+// https://codeforces.com/problemset/problem/118/A
 
 // Dependencies
 #include <algorithm>
@@ -36,27 +36,21 @@
 
 using namespace std;
 
+bool is_vowel(char c) {
+	return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y';
+}
+
 int main() {
 	// freopen("../IO/input.txt", "r", stdin); // Input file
 	// freopen("../IO/output.txt", "w", stdout); // Output file
-	int t;
-	cin >> t;
-
-	while (t--) {
-		int n; // length of string
-		cin >> n;
-		string s;
-		cin >> s;
-		string scpy = s;
-		// sort string
-		sort(s.begin(), s.end());
-		// subtract strings
-		int ans = 0;
-		for (int i = 0; i < n; i++) {
-			if (s[i] != scpy[i]) {
-				ans++;
-			}
-		}
-		cout << ans << endl;
+	string str;
+	cin >> str;
+	int n = str.size();
+	// lowercase str
+	for (int i = 0; i < n; i++) {
+		str[i] = tolower(str[i]);
+		if (is_vowel(str[i])) continue;
+		cout << "." << str[i];
 	}
+	cout << endl;
 }

@@ -1,4 +1,4 @@
-// https://codeforces.com/contest/1552/problem/A
+// https://codeforces.com/problemset/problem/59/A
 
 // Dependencies
 #include <algorithm>
@@ -39,24 +39,16 @@ using namespace std;
 int main() {
 	// freopen("../IO/input.txt", "r", stdin); // Input file
 	// freopen("../IO/output.txt", "w", stdout); // Output file
-	int t;
-	cin >> t;
+	string str;
+	cin >> str;
 
-	while (t--) {
-		int n; // length of string
-		cin >> n;
-		string s;
-		cin >> s;
-		string scpy = s;
-		// sort string
-		sort(s.begin(), s.end());
-		// subtract strings
-		int ans = 0;
-		for (int i = 0; i < n; i++) {
-			if (s[i] != scpy[i]) {
-				ans++;
-			}
-		}
-		cout << ans << endl;
+	int len = str.length(), delta = 0;
+	for (int i = 0; i < len; i++) {
+		// check to see if the character is lowercase
+		if (str[i] >= 'a' && str[i] <= 'z') delta--;
+		else delta++;
 	}
+	if (delta <= 0) for (int i = 0; i < len; i++) str[i] = tolower(str[i]);
+	else for (int i = 0; i < len; i++) str[i] = toupper(str[i]);
+	cout << str << endl;
 }
